@@ -1,0 +1,92 @@
+---
+title: "Tipos de Datos"
+author: "Robeto Cardozo"
+date: "2024-04-02"
+output: html_document
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+vocales <- c("a","e","i","o","u","5")
+vocales 
+```
+
+
+```{r}
+# Usar la función LETTERS para obtener las primeras 20 letras mayúsculas
+
+primeras_letras <- LETTERS[1:20]
+
+
+print(primeras_letras)
+
+
+
+```
+```{r}
+#  100 números positivos pares
+numeros_pares <- seq(from = 2, by = 2, length.out = 100)
+
+#  matriz de 10x10
+matriz <- matrix(numeros_pares, nrow = 10, ncol = 10, byrow = TRUE)
+
+matriz
+
+```
+```{r}
+# Matriz identidad
+vector <- c(1, 0, 0, 0, 1, 0,0,0,1)
+
+# Convertir el vector en una matriz de 3x3, llenando por filas
+matriz_iden <- matrix(data = vector, nrow = 3, ncol = 3, byrow = TRUE)
+matriz_iden
+
+```
+## lista de objetos 
+```{r}
+lista <- list(letras=primeras_letras,Matriz_num_pares=matriz,matriz_identidad=matriz_iden)
+print(lista)
+```
+# 5- Construya un marco de datos o data frame con las respuestas de 3 personas a las preguntas: (a) ¿Cuál es su edad en años? (b) ¿Tipo de música que más le gusta? (c) ¿Tiene usted pareja sentimental estable?
+
+**Este ejercicio lo hicimos buscando como se hace un data frame, en contramos un eemplo y fuimos modificando de acuerdo al ejercicio dado**
+
+```{r}
+# data frame
+edad <- c(20, 30, 40)
+tipo_de_musica <- c("rock", "Folclore", "Jazz")
+situacion_sentimental <- c("Soltero", "Casado", "Separado")
+
+data_frame <- data.frame(edad,tipo_de_musica, situacion_sentimental)
+
+# Para  visualizar el data frame
+View(data_frame)
+
+
+
+
+```
+
+##6- ¿Cuál es el error al correr el siguiente código? ¿A qué se debe?
+ 
+**Consideramos que se Trataba de un data frame como el ejercicio anterior por eso modificamos el código de acuerdo a eso**
+  
+edad <- c(15, 19, 13, NA, 20) deporte <- c(TRUE, TRUE, NA, FALSE, TRUE) comic_fav <- c(NA, ‘Superman’, ‘Batman’, NA, ‘Batman’) matrix(edad, deporte, comic_fav)
+
+```
+```{r}
+edad <- c(15, 19, 13, NA, 20)
+deporte <- c(TRUE, TRUE, NA, FALSE, TRUE)
+comic_fav <- c(NA, "Superman", "Batman", NA, "Batman")
+
+data_frame2 <- data.frame(edad, deporte, comic_fav)
+
+print(data_frame2)
+
+
+```
+https://themys.sid.uncu.edu.ar/rpalma/HC_No_Convencionales/Datasets/fracking_lab.csv
